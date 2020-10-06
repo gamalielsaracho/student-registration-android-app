@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">student-registration-android-app</string>
+    <string name="btn_send">Send</string>
+</resources>
