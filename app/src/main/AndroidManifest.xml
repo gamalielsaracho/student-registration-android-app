@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".FindStudentSpinnerActivity"></activity>
+        <activity android:name=".StudentDetailActivity"></activity>
+        <activity android:name=".ListViewStudentsActivity" />
+        <activity android:name=".FindStudentSpinnerActivity" />
         <activity android:name=".ShowStudentActivity" />
         <activity android:name=".StudentFormActivity" />
         <activity android:name=".StudentsActivity" />

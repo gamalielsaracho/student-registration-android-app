@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -46,6 +48,28 @@ public class FindStudentSpinnerActivity extends AppCompatActivity {
 
         // set the adapter of spinnerStudent view.
         spinnerStudents.setAdapter(adapter);
+
+
+        // onclick
+        spinnerStudents.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                if(position != 0) {
+                    showStudentName.setText(studentsListEnti.get(position-1).getName().toString());
+                    showStudentTelephone.setText(studentsListEnti.get(position-1).getTelephone().toString());
+                } else {
+                    showStudentName.setText("");
+                    showStudentTelephone.setText("");
+                }
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
     }
 
     private void findStudentsList() {
@@ -76,6 +100,7 @@ public class FindStudentSpinnerActivity extends AppCompatActivity {
         getStudentList();
     }
 
+    // this is using to populate the spinner
     private void getStudentList() {
         studentsList = new ArrayList<String>();
 

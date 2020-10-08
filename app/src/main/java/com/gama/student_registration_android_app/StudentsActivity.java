@@ -13,29 +13,12 @@ import java.util.ArrayList;
 
 public class StudentsActivity extends AppCompatActivity {
 
-    ListView listViewStudents;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_students);
-
-        // mapping
-        listViewStudents = findViewById(R.id.listViewStudents);
-
-        // create an arrayList of students
-        ArrayList<String> students = new ArrayList<String>();
-
-        students.add("Gama");
-        students.add("Fer");
-        students.add("Juan");
-        students.add("Alice");
-
-        // adapter
-        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, students);
-
-        // load adapter
-        listViewStudents.setAdapter(adapter);
     }
 
     public void onclick(View view) {
@@ -51,6 +34,9 @@ public class StudentsActivity extends AppCompatActivity {
                 break;
             case R.id.btnFindStudentWithSpinner:
                 intent = new Intent(StudentsActivity.this, FindStudentSpinnerActivity.class);
+                break;
+            case R.id.goToStudentsListView:
+                intent = new Intent(StudentsActivity.this, ListViewStudentsActivity.class);
                 break;
         }
 

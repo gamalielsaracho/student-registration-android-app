@@ -1,6 +1,9 @@
 package com.gama.student_registration_android_app.entities;
 
-public class Student {
+import java.io.Serializable;
+
+// implements Serializable is used to send object as parameters
+public class Student implements Serializable {
     private Integer id;
     private String name;
     private String telephone;
